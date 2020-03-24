@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="search">BUSCA</button>     
+    </body>
+    <script>    
+        $.getJSON('https://api.myjson.com/bins/tar0f',function(data){
+			console.log(data)
+			function mostrarTitols(){
+                var cuentos = data.books;
+                $.each(cuentos, function(key, value){
+					  var $titulo = $('<p/>').html(value.titulo);
+					  $('#search').append($titulo);
+				});
+			};
+			mostrarTitols();
+		});
+    </script>
+</html>

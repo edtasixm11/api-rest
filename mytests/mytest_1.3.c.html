@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Connexio API REST utilitzant el metode XMLHttpRequest()</h1>
+        <br/>
+        <div id="elements"></div>
+    </body>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://jsonplaceholder.typicode.com/posts/1/comments";
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                console.log(myArr);
+                console.log(myArr[0].id + " - " + myArr[0].email);
+            }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();  
+        console.log(xmlhttp);
+    </script>
+</html>
+

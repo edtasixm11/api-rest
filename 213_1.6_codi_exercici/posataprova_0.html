@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Connexio API REST utilitzant el metode XMLHttpRequest()</h1>
+        <br/>
+        <div id="elements"></div>
+    </body>
+    <script>
+
+
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://jsonplaceholder.typicode.com/posts";
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+
+                console.log(myArr);
+
+                myFunction(myArr);
+
+            }
+        };
+
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+       
+        console.log(xmlhttp);
+
+        function myFunction(array) {
+            var sortida = "";
+
+            for(var i = 0; i < array.length; i++) {
+                sortida += array[i].id + " - " + array[i].title + "<br/>";
+            
+                console.log(array[0].id + " - " + array[0].title);
+
+               
+            }
+
+            document.getElementById("elements").innerHTML = sortida;
+        }   
+
+
+    </script>
+</html>
+

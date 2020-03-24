@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <button id="button">BUSCA</button>     
+    </body>
+
+    <script>    
+
+        $(document).ready(function(){
+            var url =  'https://api.myjson.com/bins/tar0f';
+            $('#button').click(function(){
+                $.ajax({
+                    url: url,
+                    type:"GET",
+                    success:function(result){
+                        console.log(result)
+
+                    },
+                    error:function(error){
+                        console.log(error)
+
+
+                    }
+                });
+            });
+        });
+
+    </script>
+</html>

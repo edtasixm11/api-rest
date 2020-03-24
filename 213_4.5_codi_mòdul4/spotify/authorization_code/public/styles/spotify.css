@@ -1,0 +1,86 @@
+
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    width: 500px;
+    background-color: limegreen;
+}
+
+
+
+#login, #loggedin {
+    display: none;
+}
+
+#oauth, #obtain-new-token {
+
+    display: none;
+}
+
+
+
+
+#loggedin{
+    margin-top: 20px;
+    background-color: lawngreen
+
+}
+
+
+
+#user-profile{
+    background-color: black;
+    padding-left:20px;
+    padding-top: 20px;
+    color: black
+
+}
+
+.media{
+    color:white
+}
+
+
+h2 {
+    color: lawngreen;
+    margin: 0
+}
+
+
+#resultats{
+    display: flex;
+    height: 650px;
+    width: 90%;
+    margin-right: auto;
+    padding-bottom: 25px
+}
+
+
+
+#artists {
+
+    margin-right: 30px
+}
+
+
+
+.object, .new_object {
+
+    margin: 5px;
+    width: auto;
+}
+
+
+
+.input{
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center
+
+}
+
+
+

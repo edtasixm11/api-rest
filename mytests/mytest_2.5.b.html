@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <style>
+            img {
+                width: 30%;
+                border: 1px solid grey
+            }
+            .object{
+                width:300px;
+                margin: 10px;
+                padding: 10px;
+                text-align: center;
+                background-color: black;
+                border-radius: 5px
+            }
+            .titulo {
+                font-weight: bold;
+                color: yellow
+            }
+            #search {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="search"></div>     
+    </body>
+    <script>    
+        $.getJSON('https://api.myjson.com/bins/tar0f', function(data){
+            console.log(data)
+            function mostrarTitols(){
+                var cuentos = data.books;
+                $.each(cuentos, function(key, value){
+                    var $object = $('<div class="object"/>');
+                    var $titulo = $('<p class="titulo"/>').html(value.titulo);
+                    var $image = $('<img/>').addClass("portada").attr("src",value.portada);
+                    $object.append($titulo);
+                    $object.append($image);
+                    $('#search').append($object);
+                });
+            };
+            mostrarTitols();
+        });
+    </script>
+</html>
+
